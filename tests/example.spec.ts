@@ -1,3 +1,4 @@
+// Learning Git and Playwright step by step
 import { test, expect } from '@playwright/test';
 
 test('has title', async ({ page }) => {
