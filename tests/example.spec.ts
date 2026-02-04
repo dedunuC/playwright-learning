@@ -17,3 +17,19 @@ test('get started link', async ({ page }) => {
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
+
+async function goToGetStartedPage(page) {
+  await page.goto('https://playwright.dev/');
+  await page.getByRole('link', { name: 'Get started' }).click();
+  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+}
+
+test('navigating to writing tests page', async ({ page }) => {
+  await goToGetStartedPage(page);
+
+  // Click the 'Write tests' link at the bottom of the page.
+  await page.getByRole('link', { name: 'Write tests using web-first assertions, fixtures and locators' }).click();
+  
+  //Expects page to have a heading with the name of Writing Tests.
+  await expect(page.getByRole('heading', { name: 'Writing Tests' })).toBeVisible();
+});
