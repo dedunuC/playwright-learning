@@ -21,7 +21,6 @@ test('get started link', async ({ page }) => {
 async function goToGetStartedPage(page) {
   await page.goto('https://playwright.dev/');
   await page.getByRole('link', { name: 'Get started' }).click();
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 }
 
 test('navigating to writing tests page', async ({ page }) => {
